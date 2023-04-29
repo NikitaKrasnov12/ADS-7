@@ -31,12 +31,12 @@ public:
         QItem * item = create(data);
         while (temp && temp -> data.prior >= data.prior)
             temp = temp -> next;
-        if (!temp && head) {
+        if (!temp && !head) {
+            head = tail = item;
+        } else if (!temp && head) {
             tail -> next = item;
             tail -> next -> prev = tail;
             tail = item;
-        } else if (!temp && !head) {
-            head = tail = item;
         } else if (!temp -> prev) {
             temp -> prev = item;
             item -> next = temp;

@@ -4,7 +4,7 @@
 
 template<typename T>
 class TPQueue {
-private:
+ private:
     struct QItem {
         T data;
         QItem* next;
@@ -18,7 +18,7 @@ private:
         item->prev = nullptr;
         return item;
     }
-public:
+ public:
     T pop() {
         QItem* temp = head;
         T result = temp->data;

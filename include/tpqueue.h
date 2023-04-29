@@ -19,12 +19,12 @@ class TPQueue {
         item->prev = nullptr;
         return item;
     }
- 
+
  public:
     T pop() {
         if (head) {
           QItem * temp = head -> next;
-        if (temp){
+        if (temp) {
           temp -> prev = nullptr;
         }
         T data = head -> data;

@@ -18,13 +18,22 @@ class TPQueue {
         item->prev = nullptr;
         return item;
     }
+ 
  public:
     T pop() {
-        QItem* temp = head;
-        T result = temp->data;
-        head = head->next;
-        delete temp;
-        return result;
+        if (head) {
+      QItem * temp = head -> next;
+        if (temp){
+          temp -> prev = nullptr;
+        }
+        T data = head -> data;
+        delete head;
+        head = temp;
+        return data; 
+        return data;
+    } else {
+        throw std::string("Empty");
+      }
     }
     void push(const T& data) {
         QItem * temp = head;

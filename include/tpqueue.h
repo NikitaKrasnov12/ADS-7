@@ -18,6 +18,7 @@ private:
         item->prev = nullptr;
         return item;
     }
+public:
     T pop() {
         QItem* temp = head;
         T result = temp->data;
